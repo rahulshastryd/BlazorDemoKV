@@ -436,6 +436,21 @@
           "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {}
         }
       },
+      "Microsoft.Extensions.Http/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Logging": "5.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Options": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {}
+        }
+      },
       "Microsoft.Extensions.Logging/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -2115,6 +2130,7 @@
           "Microsoft.AspNetCore.Components.WebAssembly": "5.0.13",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "Microsoft.Extensions.Http": "5.0.0",
           "Syncfusion.Blazor.Grid": "19.4.0.53",
           "System.Net.Http.Json": "5.0.0"
         },
@@ -2802,6 +2818,26 @@
         "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.xml",
         "microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
         "microsoft.extensions.filesystemglobbing.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Extensions.Http/5.0.0": {
+      "sha512": "kT1ijDKZuSUhBtYoC1sXrmVKP7mA08h9Xrsr4VrS/QOtiKCEtUTTd7dd3XI9dwAb46tZSak13q/zdIcr4jqbyg==",
+      "type": "package",
+      "path": "microsoft.extensions.http/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Http.dll",
+        "lib/net461/Microsoft.Extensions.Http.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.5.0.0.nupkg.sha512",
+        "microsoft.extensions.http.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -7465,11 +7501,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Rahul\\PWA\\BlazorWebAssemblyApp\\BlazorWebApp\\Server\\BlazorWebApp.Server.csproj",
+      "projectUniqueName": "D:\\Rahul\\PWA\\BlazorDemoKV\\BlazorWebAssemblyApp\\BlazorWebApp\\Server\\BlazorWebApp.Server.csproj",
       "projectName": "BlazorWebApp.Server",
-      "projectPath": "D:\\Rahul\\PWA\\BlazorWebAssemblyApp\\BlazorWebApp\\Server\\BlazorWebApp.Server.csproj",
+      "projectPath": "D:\\Rahul\\PWA\\BlazorDemoKV\\BlazorWebAssemblyApp\\BlazorWebApp\\Server\\BlazorWebApp.Server.csproj",
       "packagesPath": "C:\\Users\\Rahul.D\\.nuget\\packages\\",
-      "outputPath": "D:\\Rahul\\PWA\\BlazorWebAssemblyApp\\BlazorWebApp\\Server\\obj\\",
+      "outputPath": "D:\\Rahul\\PWA\\BlazorDemoKV\\BlazorWebAssemblyApp\\BlazorWebApp\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7490,11 +7526,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Rahul\\PWA\\BlazorWebAssemblyApp\\BlazorWebApp\\Client\\BlazorWebApp.Client.csproj": {
-              "projectPath": "D:\\Rahul\\PWA\\BlazorWebAssemblyApp\\BlazorWebApp\\Client\\BlazorWebApp.Client.csproj"
+            "D:\\Rahul\\PWA\\BlazorDemoKV\\BlazorWebAssemblyApp\\BlazorWebApp\\Client\\BlazorWebApp.Client.csproj": {
+              "projectPath": "D:\\Rahul\\PWA\\BlazorDemoKV\\BlazorWebAssemblyApp\\BlazorWebApp\\Client\\BlazorWebApp.Client.csproj"
             },
-            "D:\\Rahul\\PWA\\BlazorWebAssemblyApp\\BlazorWebApp\\Shared\\BlazorWebApp.Shared.csproj": {
-              "projectPath": "D:\\Rahul\\PWA\\BlazorWebAssemblyApp\\BlazorWebApp\\Shared\\BlazorWebApp.Shared.csproj"
+            "D:\\Rahul\\PWA\\BlazorDemoKV\\BlazorWebAssemblyApp\\BlazorWebApp\\Shared\\BlazorWebApp.Shared.csproj": {
+              "projectPath": "D:\\Rahul\\PWA\\BlazorDemoKV\\BlazorWebAssemblyApp\\BlazorWebApp\\Shared\\BlazorWebApp.Shared.csproj"
             }
           }
         }

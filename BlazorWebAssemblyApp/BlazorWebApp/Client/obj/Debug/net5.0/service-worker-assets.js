@@ -233,7 +233,7 @@
       "url": "_content\/Syncfusion.Blazor.Grid\/scripts\/sf-grid-2e8b64.min.js"
     },
     {
-      "hash": "sha256-rsO9v8Se51zKqpsB\/wygQF+2jPIMn9aWFedFy0Azbxk=",
+      "hash": "sha256-gpDAbRLtkeQASAmhfgoBkc5kGT\/7uNElLP2Rmr7kVNU=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -335,6 +335,10 @@
     {
       "hash": "sha256-xrpMDo35bgwz\/m\/kwUvL9SAOxyEgSSwO57RiuhILHgI=",
       "url": "_framework\/Microsoft.Extensions.FileSystemGlobbing.dll"
+    },
+    {
+      "hash": "sha256-yUMvQwAOesiz+yHxElu\/ObK7gQIqcSR7vktOISpntaA=",
+      "url": "_framework\/Microsoft.Extensions.Http.dll"
     },
     {
       "hash": "sha256-VlsKv5zXgdK0MrYHXr9XlUCXwuwNI7AUI\/C1PEFXcz4=",
@@ -1177,19 +1181,19 @@
       "url": "_framework\/dotnet.5.0.13.js"
     },
     {
-      "hash": "sha256-2zt47q1GKSUX87zopbo0pyBJipOR09Vvcoio+tvRTOE=",
+      "hash": "sha256-pP7z8ppHS4LQdCprefaApYo4sAeHbFamUj\/xgo2Ok\/4=",
       "url": "_framework\/BlazorWebApp.Shared.dll"
     },
     {
-      "hash": "sha256-Wo0ZSL+NY8SEvOuGLA\/2bG91TUN4YIBWBrFUslunpeQ=",
+      "hash": "sha256-vpbp5to557UFTt4A+Mpql8tsMqg0vcgLJCrQY\/qWavA=",
       "url": "_framework\/BlazorWebApp.Shared.pdb"
     },
     {
-      "hash": "sha256-N\/YISap6v7miHUJ+oPduTt8UcOx3QKJWzkpWBycQf1M=",
+      "hash": "sha256-7w5yc3cWnjseF3PEFqoTnYj4vf\/0DIEcYAIIkbsbwls=",
       "url": "_framework\/BlazorWebApp.Client.dll"
     },
     {
-      "hash": "sha256-nCN1UEQ3E8FR4x+31SuF3sUKnm1f5mmm2MOJDCuWh7Y=",
+      "hash": "sha256-s8CSAyI4lXxqCckcee5if7x6XGlgF3o6j6h699G1LEA=",
       "url": "_framework\/BlazorWebApp.Client.pdb"
     },
     {
@@ -1295,6 +1299,10 @@
     {
       "hash": "sha256-UhKgeJUMjLutCvYq0YjKNCjwQvaKT1VFlCqPm9jd8V0=",
       "url": "_framework\/Microsoft.Extensions.FileSystemGlobbing.dll.gz"
+    },
+    {
+      "hash": "sha256-UARVGO+Qf7wMmAFoMZtzgqg9qr8oM+JnaOwzsNegQM4=",
+      "url": "_framework\/Microsoft.Extensions.Http.dll.gz"
     },
     {
       "hash": "sha256-\/OyzmrlW5xT4QqbyVUn5xIdYaafJOu0qnNKz\/UZnlm8=",
@@ -2137,7 +2145,7 @@
       "url": "_framework\/dotnet.5.0.13.js.gz"
     },
     {
-      "hash": "sha256-pf8oQ41ram\/BVjwQAcNbjjQpm9Ie4lfJQ+RsMw+JkZ0=",
+      "hash": "sha256-2QJ+2nn04ER3mUrUlqpyyB5gJR28Twp+yxAUkdVE0Vc=",
       "url": "_framework\/BlazorWebApp.Shared.dll.gz"
     },
     {
@@ -2213,5 +2221,5 @@
       "url": "BlazorWebApp.Client.bundle.scp.css"
     }
   ],
-  "version": "M9V1rTQ9"
+  "version": "1hoKSZwZ"
 };

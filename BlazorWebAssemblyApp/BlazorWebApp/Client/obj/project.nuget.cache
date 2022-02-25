@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "50imekunT4PUUIUTF2uBhHdr7FBefLQJuvoXEovZul4LcPwwq5aDW/RosVUsp4q4XPu4ithlGjJjY2ls1wuIHQ==",
+  "dgSpecHash": "juGOdkqpUn7yvJhIVSbCAizkfumQumvIeOFGKkNDwUWXoqpiRCgsiQUC6ZXy2NVEfHz5yfcwHzkaiBu4g7hqiQ==",
   "success": true,
-  "projectFilePath": "D:\\Rahul\\PWA\\BlazorWebAssemblyApp\\BlazorWebApp\\Client\\BlazorWebApp.Client.csproj",
+  "projectFilePath": "D:\\Rahul\\PWA\\BlazorDemoKV\\BlazorWebAssemblyApp\\BlazorWebApp\\Client\\BlazorWebApp.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rahul.D\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Rahul.D\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.13\\microsoft.aspnetcore.authorization.5.0.13.nupkg.sha512",
@@ -35,6 +35,7 @@
     "C:\\Users\\Rahul.D\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Rahul.D\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\5.0.0\\microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
     "C:\\Users\\Rahul.D\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\5.0.0\\microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
+    "C:\\Users\\Rahul.D\\.nuget\\packages\\microsoft.extensions.http\\5.0.0\\microsoft.extensions.http.5.0.0.nupkg.sha512",
     "C:\\Users\\Rahul.D\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\Rahul.D\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Rahul.D\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
