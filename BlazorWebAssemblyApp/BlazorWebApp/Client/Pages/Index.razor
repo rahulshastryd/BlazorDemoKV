@@ -12,7 +12,13 @@
 
 @if (Employees != null)
 {
-<SfGrid DataSource="@Employees" AllowPaging="true">
+<SfGrid DataSource="@Employees" AllowPaging="true" AllowSorting="true">
+    <GridSortSettings AllowUnsort="false">
+        <GridSortColumns>
+            <GridSortColumn Field="EmployeeId" Direction="SortDirection.Descending">
+            </GridSortColumn>
+        </GridSortColumns>
+    </GridSortSettings>
     <GridPageSettings PageSize="10" PageCount="5" PageSizes="@pagerDropdown">
     </GridPageSettings>
     <GridColumns>

@@ -126,7 +126,7 @@ using BlazorWebApp.Client.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 29 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\Index.razor"
+#line 35 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\Index.razor"
        
     public List<Employee> Employees { get; set; }
     string[] pagerDropdown = new string[] { "All", "5", "10", "15", "20" };

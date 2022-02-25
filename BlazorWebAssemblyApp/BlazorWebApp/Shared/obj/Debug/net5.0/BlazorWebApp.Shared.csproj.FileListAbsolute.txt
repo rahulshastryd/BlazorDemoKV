@@ -26,4 +26,3 @@ D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net
 D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\ref\BlazorWebApp.Shared.dll
 D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.pdb
 D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.genruntimeconfig.cache
-D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.csproj.AssemblyReference.cache
