@@ -1,0 +1,14 @@
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\bin\Debug\net5.0\BlazorWebApp.Shared.deps.json
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\bin\Debug\net5.0\BlazorWebApp.Shared.dll
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\bin\Debug\net5.0\ref\BlazorWebApp.Shared.dll
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\bin\Debug\net5.0\BlazorWebApp.Shared.pdb
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.AssemblyInfoInputs.cache
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.AssemblyInfo.cs
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.csproj.CoreCompileInputs.cache
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.dll
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\ref\BlazorWebApp.Shared.dll
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.pdb
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\bin\Debug\net5.0\BlazorWebApp.Shared.runtimeconfig.json
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\bin\Debug\net5.0\BlazorWebApp.Shared.runtimeconfig.dev.json
+D:\Rahul\PWA\BlazorWebAssemblyApp\BlazorWebApp\Shared\obj\Debug\net5.0\BlazorWebApp.Shared.genruntimeconfig.cache
