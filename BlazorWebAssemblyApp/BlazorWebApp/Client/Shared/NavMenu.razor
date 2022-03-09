@@ -1,4 +1,5 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
+﻿
+<div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">BlazorWebApp</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
@@ -23,12 +24,38 @@
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="employees" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Employees
+            <NavLink class="nav-link" href="all" Match="NavLinkMatch.All">
+                <span class="e-icons e-open-link" aria-hidden="true"></span> All Employees
             </NavLink>
         </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="search" Match="NavLinkMatch.All">
+                <span class="e-icons e-search" aria-hidden="true"></span> Search Employees
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="details" Match="NavLinkMatch.All">
+                <span class="e-icons e-people" aria-hidden="true"></span> Employee Details
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="gridColumnFeatures" Match="NavLinkMatch.All">
+                <span class="e-icons e-open-link" aria-hidden="true"></span> Grid Column Features
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="datagridbuttons" Match="NavLinkMatch.All">
+                <span class="e-icons e-annotation-edit" aria-hidden="true"></span> Edit Employee
+            </NavLink>
+        </li>
+
     </ul>
 </div>
+<style>
+    .e-icons {
+        font-size: 24px;
+    }
+</style>
 
 @code {
     private bool collapseNavMenu = true;

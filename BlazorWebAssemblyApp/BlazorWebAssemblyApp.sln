@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp.Server", "BlazorWebApp\Server\BlazorWebApp.Server.csproj", "{D37DD41D-2BFA-4954-BCD9-D46A47FFD44F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebApp.Server", "BlazorWebApp\Server\BlazorWebApp.Server.csproj", "{D37DD41D-2BFA-4954-BCD9-D46A47FFD44F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp.Client", "BlazorWebApp\Client\BlazorWebApp.Client.csproj", "{A69EAF63-3159-4E95-8348-DF05D3389D06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebApp.Client", "BlazorWebApp\Client\BlazorWebApp.Client.csproj", "{A69EAF63-3159-4E95-8348-DF05D3389D06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp.Shared", "BlazorWebApp\Shared\BlazorWebApp.Shared.csproj", "{744BE052-C4DE-4EB1-8805-3B9C0555BBE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebApp.Shared", "BlazorWebApp\Shared\BlazorWebApp.Shared.csproj", "{744BE052-C4DE-4EB1-8805-3B9C0555BBE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

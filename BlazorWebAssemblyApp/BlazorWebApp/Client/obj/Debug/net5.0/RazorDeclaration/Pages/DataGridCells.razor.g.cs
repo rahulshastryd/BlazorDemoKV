@@ -98,27 +98,55 @@ using Syncfusion.Blazor.Spinner;
 #nullable disable
 #nullable restore
 #line 14 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\_Imports.razor"
+using Syncfusion.Blazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\_Imports.razor"
 using BlazorWebApp.Client.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\EmployeeList.razor"
+#line 18 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\_Imports.razor"
+using Syncfusion.Blazor.Buttons;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\DataGridCells.razor"
 using BlazorWebApp.Shared.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\EmployeeList.razor"
+#line 3 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\DataGridCells.razor"
 using Syncfusion.Blazor.Grids;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/employees")]
-    public partial class EmployeeList : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 4 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\DataGridCells.razor"
+using Syncfusion.Blazor.DropDowns;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\DataGridCells.razor"
+using BlazorWebApp.Shared.Utilities;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/datagridcells")]
+    public partial class DataGridCells : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -126,66 +154,66 @@ using Syncfusion.Blazor.Grids;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 15 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\EmployeeList.razor"
+#line 56 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\DataGridCells.razor"
        
     public List<Employee> Employees { get; set; }
 
-    protected override void OnInitialized()
+    [Inject]
+    public IEmployeeService EmployeeService { get; set; }
+    public SfGrid<Employee> employeeGrid { get; set; }
+
+    protected void GenderSelectionChange(ChangeEventArgs<string, DropDownListItems> args)
     {
-        Employees = LoadData();
+        if (args.Value == "All")
+        {
+            employeeGrid.ClearFiltering("Gender");
+        }
+        else
+        {
+            employeeGrid.FilterByColumn("Gender", "equal", args.Value);
+        }
     }
 
-    private List<Employee> LoadData()
+    List<DropDownListItems> genderDorpDownSource = EnumHelper.ConvertEnumToDropDownSource<Gender>("All", "All");
+
+    protected override async Task OnInitializedAsync()
     {
-        Employee e1 = new Employee
-        {
-            EmployeeId = 1,
-            FirstName = "John",
-            LastName = "Hastings",
-            Email = "john@pragimtech.com",
-            DateOfBrith = new DateTime(1980, 10, 5),
-            Gender = Gender.Male,
-            Department = new Department { DepartmentId = 1, DepartmentName = "IT" },
-            PhotoPath = "images/john.png"
-        };
+        Employees = (await EmployeeService.GetAllEmployees()).ToList();
+    }
 
-        Employee e2 = new Employee
+    private void QueryCellInfoHandler(QueryCellInfoEventArgs<Employee> args)
+    {
+        if (args.Column.Field == "FirstName")
         {
-            EmployeeId = 2,
-            FirstName = "Sam",
-            LastName = "Galloway",
-            Email = "sam@pragimtech.com",
-            DateOfBrith = new DateTime(1981, 12, 22),
-            Gender = Gender.Male,
-            Department = new Department { DepartmentId = 2, DepartmentName = "HR" },
-            PhotoPath = "images/sam.jpg"
-        };
+            if (args.Data.FirstName.StartsWith("S"))
+            {
+                args.Cell.AddStyle(new string[] { "background-color:purple;color:white" });
+            }
+            else if (args.Data.FirstName.StartsWith("J"))
+            {
+                args.Cell.AddStyle(new string[] { "background-color:red;color:white" });
+            }
+            else
+            {
+                args.Cell.AddStyle(new string[] { "background-color:yellow;color:white" });
+            }
+        }
+    }
 
-        Employee e3 = new Employee
+    private void RowBound(RowDataBoundEventArgs<Employee> args)
+    {
+        if (args.Data.FirstName.StartsWith("S"))
         {
-            EmployeeId = 3,
-            FirstName = "Mary",
-            LastName = "Smith",
-            Email = "mary@pragimtech.com",
-            DateOfBrith = new DateTime(1979, 11, 11),
-            Gender = Gender.Female,
-            Department = new Department { DepartmentId = 1, DepartmentName = "IT" },
-            PhotoPath = "images/mary.png"
-        };
-
-        Employee e4 = new Employee
+            args.Row.AddStyle(new string[] { "background-color:purple;color:white" });
+        }
+        else if (args.Data.FirstName.StartsWith("J"))
         {
-            EmployeeId = 3,
-            FirstName = "Sara",
-            LastName = "Longway",
-            Email = "sara@pragimtech.com",
-            DateOfBrith = new DateTime(1982, 9, 23),
-            Gender = Gender.Female,
-            Department = new Department { DepartmentId = 3, DepartmentName = "Payroll" },
-            PhotoPath = "images/sara.png"
-        };
-
-        return new List<Employee> { e1, e2, e3, e4 };
+            args.Row.AddStyle(new string[] { "background-color:red;color:white" });
+        }
+        else
+        {
+            args.Row.AddStyle(new string[] { "background-color:yellow;color:white" });
+        }
     }
 
 #line default

@@ -1,0 +1,161 @@
+﻿@page "/editemployeedetails"
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.DropDowns
+@using BlazorWebApp.Shared.Models;
+@using Syncfusion.Blazor.Buttons
+
+<div>
+    <SfGrid @ref="employeeGrid" DataSource="@Employees" AllowPaging="true"
+            Toolbar="@(new List<string>() { "Add", "Edit", "Update", "Delete", "Cancel" })">
+        <GridEditSettings Mode="EditMode.Dialog" AllowAdding="true" AllowEditing="true" AllowDeleting="true">
+            <HeaderTemplate>
+                <span>@GetDialogHeader(context as Employee)</span>
+            </HeaderTemplate>
+            <FooterTemplate>
+                <SfButton OnClick="@Save" IsPrimary="true">@FooterSaveButtonText</SfButton>
+                <SfButton OnClick="@Cancel">Cancel</SfButton>
+            </FooterTemplate>
+        </GridEditSettings>
+        <GridPageSettings PageSize="5"></GridPageSettings>
+        <GridEvents OnBatchSave="BatchSaveHandler" OnActionBegin="ActionBeginHandler" TValue="Employee">
+        </GridEvents>
+        <GridColumns>
+            <GridColumn IsPrimaryKey="true" Field=@nameof(Employee.EmployeeId) AllowEditing="false" HeaderText="ID" Width="60px">
+            </GridColumn>
+            <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name" ValidationRules="@(new ValidationRules() {Required= true,MinLength=2 })" ></GridColumn>
+            <GridColumn Field=@nameof(Employee.LastName) HeaderText=" Last Name"></GridColumn>
+            <GridColumn Field=@nameof(Employee.DateOfBrith) Format="d"
+                        HeaderText="Date of Birth"></GridColumn>
+            <GridColumn Field=@nameof(Employee.DepartmentId) HeaderText="DepartmentId" Width="140px">
+                <Template>
+                    <span>
+                        @GetDepartmentNameById((context as Employee).DepartmentId)
+                    </span>
+                </Template>
+                <EditTemplate>
+                    <SfDropDownList TItem="Department" TValue="int" DataSource="@Departments"
+                                    @bind-Value="@((context as Employee).DepartmentId)">
+                        <DropDownListFieldSettings Text="DepartmentName" Value="DepartmentId">
+                        </DropDownListFieldSettings>
+                    </SfDropDownList>
+                </EditTemplate>
+            </GridColumn>
+            <GridColumn Field=@nameof(Employee.Gender) HeaderText="Gender" Width="140px">
+                <EditTemplate>
+                    <SfDropDownList ID="Gender" TItem="string" TValue="Gender"
+                                    @bind-Value="@((context as Employee).Gender)"
+                                    DataSource="@GenderEnumValues">
+                    </SfDropDownList>
+                </EditTemplate>
+            </GridColumn>
+            <GridColumn Field=@nameof(Employee.Email) HeaderText="Email"></GridColumn>
+        </GridColumns>
+    </SfGrid>
+</div>
+
+@code{
+
+    public List<Employee> Employees { get; set; }
+
+    public List<Department> Departments { get; set; }
+
+    public SfGrid<Employee> employeeGrid { get; set; }
+
+    [Inject]
+    public IEmployeeService EmployeeService { get; set; }
+
+    [Inject]
+    public IDepartmentService DepartmentService { get; set; }
+
+    public string[] GenderEnumValues = Enum.GetNames(typeof(Gender));
+
+    public string[] pagerDropdown { get; set; } = { "All", "5", "10", "15", "20" };
+
+    public string FooterSaveButtonText { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Employees = (await EmployeeService.GetAllEmployees()).ToList();
+        Departments = (await DepartmentService.GetAllDepartments()).ToList();
+    }
+
+    public string GetDepartmentNameById(int id)
+    {
+        if(id==0)
+        {
+            return null;
+        }
+        else
+        {
+            return Departments.FirstOrDefault(x => x.DepartmentId == id).DepartmentName;
+        }
+    }
+
+    public string GetDialogHeader(Employee employee)
+    {
+        if (employee.EmployeeId == 0)
+        {
+            FooterSaveButtonText = "Insert";
+            return "Add New Employee";
+        }
+        else
+        {
+            FooterSaveButtonText = "Update";
+            return $"Edit {employee.FirstName} Details";
+        }
+    }
+
+    public async Task Cancel()
+    {
+        await employeeGrid.CloseEdit();
+    }
+
+    public async Task Save()
+    {
+        FooterSaveButtonText = "Save";
+        await employeeGrid.EndEdit();
+    }
+
+    public async Task BatchSaveHandler(BeforeBatchSaveArgs<Employee> Args)
+    {
+        var updates = Args.BatchChanges.ChangedRecords;
+        var inserts = Args.BatchChanges.AddedRecords;
+        var deletes = Args.BatchChanges.DeletedRecords;
+
+        foreach (Employee employee in updates)
+        {
+            await EmployeeService.UpdateEmployee(employee);
+        }
+
+        foreach (Employee employee in inserts)
+        {
+            await EmployeeService.AddEmployee(employee);
+        }
+
+        foreach (Employee employee in deletes)
+        {
+            await EmployeeService.DeleteEmployee(employee.EmployeeId);
+        }
+    }
+
+    public async void ActionBeginHandler(ActionEventArgs<Employee> Args)
+    {
+        if (Args.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Save))
+        {
+            if (Args.Action == "Add")
+            {
+                await EmployeeService.AddEmployee(Args.Data);
+                Employees = (await EmployeeService.GetAllEmployees()).ToList();
+                employeeGrid.Refresh();
+            }
+            else
+            {
+                await EmployeeService.UpdateEmployee(Args.Data);
+            }
+        }
+        if (Args.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Delete))
+        {
+            await EmployeeService.DeleteEmployee(Args.Data.EmployeeId);
+        }
+    }
+}

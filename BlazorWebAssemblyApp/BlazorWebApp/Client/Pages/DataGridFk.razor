@@ -1,0 +1,72 @@
+﻿@page "/datagridfk"
+@*@page "/datagridfk"*@
+@using BlazorWebApp.Shared.Models; 
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.DropDowns
+
+<SfGrid @ref="employeeGrid" DataSource="@Employees" AllowPaging="true"
+        Toolbar="@(new List<string>() { "Add", "Edit", "Update", "Delete", "Cancel" })">
+    <GridEditSettings AllowAdding="true" AllowEditing="true" AllowDeleting="true"></GridEditSettings>
+    <GridEvents OnActionBegin="ActionBeginHandler" TValue="Employee"></GridEvents>
+    <GridColumns>
+        <GridColumn Field=@nameof(Employee.EmployeeId) IsPrimaryKey="true" HeaderText="ID" Width="60"></GridColumn>
+        <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name"></GridColumn>
+        <GridColumn Field=@nameof(Employee.LastName) HeaderText="Last Name"></GridColumn>
+        <GridColumn Field=@nameof(Employee.DateOfBrith) HeaderText="Date of Birth"></GridColumn>
+        <GridColumn Field=@nameof(Employee.Email) HeaderText="Email"></GridColumn>
+        <GridColumn Field=@nameof(Employee.Gender) HeaderText="Gender" Width="140px">
+            <EditTemplate>
+                <SfDropDownList ID="Gender" TItem="string" TValue="Gender"
+                                @bind-Value="@((context as Employee).Gender)"
+                                DataSource="@(Enum.GetNames(typeof(Gender)))">
+                </SfDropDownList>
+            </EditTemplate>
+        </GridColumn>
+        <GridForeignColumn Field=@nameof(Employee.DepartmentId)
+                           HeaderText="Dept Name" Width="150"
+                           ForeignKeyValue="DepartmentName" ForeignDataSource="@Departments">
+        </GridForeignColumn>
+    </GridColumns>
+</SfGrid>
+
+@code{
+
+    public List<Employee> Employees { get; set; }
+
+    public List<Department> Departments { get; set; }
+
+    public SfGrid<Employee> employeeGrid { get; set; }
+
+    [Inject]
+    public IEmployeeService EmployeeService { get; set; }
+
+    [Inject]
+    public IDepartmentService DepartmentService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Employees = (await EmployeeService.GetAllEmployees()).ToList();
+        Departments = (await DepartmentService.GetAllDepartments()).ToList();
+    }
+
+    public async void ActionBeginHandler(ActionEventArgs<Employee> Args)
+    {
+        if (Args.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Save))
+        {
+            if (Args.Action == "Add")
+            {
+                await EmployeeService.AddEmployee(Args.Data);
+                Employees = (await EmployeeService.GetAllEmployees()).ToList();
+                employeeGrid.Refresh();
+            }
+            else
+            {
+                await EmployeeService.UpdateEmployee(Args.Data);
+            }
+        }
+        if (Args.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Delete))
+        {
+            await EmployeeService.DeleteEmployee(Args.Data.EmployeeId);
+        }
+    }
+}

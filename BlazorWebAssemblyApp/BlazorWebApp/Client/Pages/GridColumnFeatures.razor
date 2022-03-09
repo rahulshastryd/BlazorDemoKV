@@ -1,0 +1,44 @@
+﻿@page "/gridColumnFeatures";
+@using BlazorWebApp.Shared.Models
+@using Syncfusion.Blazor.Grids;
+
+
+@if (Employees == null)
+{
+    <h3>Loading Data...</h3>
+}
+else
+{
+    <SfGrid DataSource="@Employees" ShowColumnMenu="true" ColumnMenuItems="@MenuItems"
+            AllowGrouping="true" AllowFiltering="true">
+        <GridGroupSettings ShowGroupedColumn="true"></GridGroupSettings>
+        <GridColumns>
+            <GridColumn Field=@nameof(Employee.EmployeeId) ShowColumnMenu="false" HeaderText="ID"
+                        Width="60"></GridColumn>
+            <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name" Width="120"></GridColumn>
+            <GridColumn Field=@nameof(Employee.LastName) HeaderText="Last Name" Width="120"></GridColumn>
+            <GridColumn Field=@nameof(Employee.Gender) HeaderText="Gender" Width="120"></GridColumn>
+            <GridColumn Field=@nameof(Employee.DateOfBrith) HeaderText="Date of Birth" Width="120"></GridColumn>
+            <GridColumn Field="Department.DepartmentName" HeaderText="Dept Name" Width="100"></GridColumn>
+        </GridColumns>
+    </SfGrid>
+
+    @code{
+
+        public string[] MenuItems = new string[]
+            { "AutoFit", "AutoFitAll", "Group", "Ungroup", "ColumnChooser", "Filter" };
+
+        public List<Employee> Employees { get; set; }
+
+        public SfGrid<Employee> EmployeeGrid { get; set; }
+
+        [Inject]
+        public IEmployeeService EmployeeService { get; set; }
+
+        protected override async Task OnInitializedAsync()
+        {
+            Employees = (await EmployeeService.GetAllEmployees()).ToList();
+        }
+    }
+}
+

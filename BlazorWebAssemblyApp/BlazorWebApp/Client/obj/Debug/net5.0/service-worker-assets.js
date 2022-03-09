@@ -233,7 +233,7 @@
       "url": "_content\/Syncfusion.Blazor.Grid\/scripts\/sf-grid-2e8b64.min.js"
     },
     {
-      "hash": "sha256-RnA0wfEidePCfJbFgaBmjDi2jNvwYF\/NrjWVfZAluZM=",
+      "hash": "sha256-mMLktVkdSjZo19npMLzDxk+0E804xEg5\/UARO38Pi5M=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1181,19 +1181,19 @@
       "url": "_framework\/dotnet.5.0.13.js"
     },
     {
-      "hash": "sha256-pP7z8ppHS4LQdCprefaApYo4sAeHbFamUj\/xgo2Ok\/4=",
+      "hash": "sha256-rfypOgi\/Zlb1O8dbbL8Hx+VIfJqoJgKpeK7ZgDfDjPw=",
       "url": "_framework\/BlazorWebApp.Shared.dll"
     },
     {
-      "hash": "sha256-vpbp5to557UFTt4A+Mpql8tsMqg0vcgLJCrQY\/qWavA=",
+      "hash": "sha256-lRw6z8nD\/41NrGRvYLgm8\/w1g6B+yHa5nJDK2rn6\/kQ=",
       "url": "_framework\/BlazorWebApp.Shared.pdb"
     },
     {
-      "hash": "sha256-PdW\/JT5Z6LGh6IQtrgCrvQ49yzmOT2GF8tPB6MjK0k4=",
+      "hash": "sha256-OFMpsEECdAwxwPnMVie7rpZJo+fb5OLjL4bWO19e7eQ=",
       "url": "_framework\/BlazorWebApp.Client.dll"
     },
     {
-      "hash": "sha256-telPpOUzB3ZyUoM7lozHNmJMAKwaWoHuscm1gk8JW6U=",
+      "hash": "sha256-XUifGTHM8pLUsi\/PdJksv9dZJL+C0CqBpWQv+coR7gs=",
       "url": "_framework\/BlazorWebApp.Client.pdb"
     },
     {
@@ -2145,7 +2145,7 @@
       "url": "_framework\/dotnet.5.0.13.js.gz"
     },
     {
-      "hash": "sha256-2QJ+2nn04ER3mUrUlqpyyB5gJR28Twp+yxAUkdVE0Vc=",
+      "hash": "sha256-Svdldpcxb4N4237pu2Q4CDJ0CrhxYxmQ0GVC1mUw0Fs=",
       "url": "_framework\/BlazorWebApp.Shared.dll.gz"
     },
     {
@@ -2205,6 +2205,34 @@
       "url": "icon-512.png"
     },
     {
+      "hash": "sha256-ghe21F7j8\/L+QgCEWQDkN\/Ky3Bzl1XAJwqWNcSUlJKs=",
+      "url": "images\/1.png"
+    },
+    {
+      "hash": "sha256-KnUpDs3C7QgUDC5FOl3PkW42rr26XoLi6wFwPYKK7oU=",
+      "url": "images\/2.png"
+    },
+    {
+      "hash": "sha256-Lc27iaXHk03HYxN+IeefcW3xG31zEm3J12mKDw4fKx4=",
+      "url": "images\/3.png"
+    },
+    {
+      "hash": "sha256-YuT8O0cZZ9PBp5mDpAjG55jHIdoN1W\/yp4HqMYTCzkY=",
+      "url": "images\/4.png"
+    },
+    {
+      "hash": "sha256-DvXLSgmGn7Prr0EUNqW9OTawVfRTGp224qP\/py3X32o=",
+      "url": "images\/5.png"
+    },
+    {
+      "hash": "sha256-5Nc+DhEcnL4zDRSIDNDr\/0dHAJbYCDfN97\/vYY\/IXBE=",
+      "url": "images\/6.png"
+    },
+    {
+      "hash": "sha256-yZT\/V1NL2RGwEqtdje2h46xQQX7nqV2Kds\/DIBcHrEs=",
+      "url": "images\/gendericon.png"
+    },
+    {
       "hash": "sha256-heoBhpyn8YGWoRt0+34Vazs\/mhU+CCxvsznEhZV5jtE=",
       "url": "index.html"
     },
@@ -2221,5 +2249,5 @@
       "url": "BlazorWebApp.Client.bundle.scp.css"
     }
   ],
-  "version": "goXXlZOb"
+  "version": "iqSX3M\/b"
 };

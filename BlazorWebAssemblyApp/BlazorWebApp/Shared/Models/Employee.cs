@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlazorWebApp.Shared.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace BlazorWebApp.Shared.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
+        [EmailAddress]
+        [AllowedEmailDomain("pragimtech.com")]
         public string Email { get; set; }
         public DateTime DateOfBrith { get; set; }
         public Gender Gender { get; set; }

@@ -41,12 +41,27 @@ namespace BlazorWebApp.Server.Controllers
             }
         }
 
-        [HttpGet]
-        public async Task<ActionResult> GetEmployees()
+        [HttpGet("all")]
+        public async Task<ActionResult>GetAllEmployees()
         {
             try
             {
-                return Ok(await employeeRepository.GetEmployees());
+                return Ok(await employeeRepository.GetAllEmployees()) ;
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error while retriving data from database");
+                
+            }
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetEmployees(int skip = 0,int take = 10,string orderBy = "EmployeeId")
+        {
+            try
+            {
+                return Ok(await employeeRepository.GetEmployees(skip,take,orderBy));
             }
             catch (Exception)
             {

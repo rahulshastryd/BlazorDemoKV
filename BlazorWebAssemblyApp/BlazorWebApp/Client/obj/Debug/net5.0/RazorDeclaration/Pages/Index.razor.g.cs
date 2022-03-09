@@ -97,6 +97,41 @@ using Syncfusion.Blazor.Spinner;
 #line hidden
 #nullable disable
 #nullable restore
+#line 14 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\_Imports.razor"
+using Syncfusion.Blazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\_Imports.razor"
+using BlazorWebApp.Client.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\_Imports.razor"
+using Syncfusion.Blazor.DropDowns;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\_Imports.razor"
+using BlazorWebApp.Shared.Utilities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 18 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\_Imports.razor"
+using Syncfusion.Blazor.Buttons;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\Index.razor"
 using BlazorWebApp.Shared.Models;
 
@@ -110,13 +145,6 @@ using Syncfusion.Blazor.Grids;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 4 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\Index.razor"
-using BlazorWebApp.Client.Services;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -126,24 +154,9 @@ using BlazorWebApp.Client.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\Index.razor"
-       
-    public List<Employee> Employees { get; set; }
-    string[] pagerDropdown = new string[] { "All", "5", "10", "15", "20" };
-
-    [Inject]
-    public IEmployeeService EmployeeService { get; set; }
-
-    public bool SpinnerVisible { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        SpinnerVisible = true;
-        await Task.Delay(3000);
-        Employees = (await EmployeeService.GetEmployees()).ToList();
-        SpinnerVisible = false;
-    }
-
+#line 21 "D:\Rahul\PWA\BlazorDemoKV\BlazorWebAssemblyApp\BlazorWebApp\Client\Pages\Index.razor"
+      
+    public string[] pagerDropdown { get; set; } = new string[] { "All", "5", "10", "15", "20" };
 
 #line default
 #line hidden

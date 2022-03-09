@@ -1,0 +1,48 @@
+﻿@page "/datagridcolumns";
+
+@using BlazorWebApp.Shared.Models;
+@using Syncfusion.Blazor;
+@using Syncfusion.Blazor.Grids; 
+
+@*<SfGrid DataSource="@Employees" AllowPaging="true">
+    <GridEditSettings AllowEditing="true"></GridEditSettings>
+    <GridColumns>
+        @foreach(var prop in typeof(Employee).GetProperties())
+        {
+            if(ColumnsToDisplay.Contains(prop.Name))
+            {
+                <GridColumn Field="@prop.Name" IsPrimaryKey="@(prop.Name == "EmployeeId")"
+                AllowEditing="@EditableColumns.Contains(prop.Name)" ></GridColumn>
+            }
+        }
+    </GridColumns>
+</SfGrid>*@ 
+<SfGrid DataSource="@Employees" AllowPaging="true">
+    <GridColumns>
+        <GridColumn Field=@nameof(Employee.EmployeeId) HeaderText="ID" Width="60"></GridColumn>
+        <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name"></GridColumn>
+        <GridColumn Field=@nameof(Employee.LastName) HeaderText="Last Name"></GridColumn>
+        <GridColumn Field=@nameof(Employee.DateOfBrith) HeaderText="Date of Birth"></GridColumn>
+        <GridColumn Field="Department.DepartmentName" HeaderText="Dept Name"></GridColumn>
+    </GridColumns>
+</SfGrid>
+
+@code {
+    public List<Employee> Employees { get; set; }
+
+    public List<string> ColumnsToDisplay = new List<string>()
+    {
+        "FirstName","LastName","Email","DateOfBirth","Department"
+    };
+
+    public List<string> EditableColumns = new List<string>() { "FirstName", "LastName" };
+
+    [Inject]
+    public IEmployeeService EmployeeService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Employees = (await EmployeeService.GetAllEmployees()).ToList();
+    }
+
+}

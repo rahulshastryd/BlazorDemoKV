@@ -1,0 +1,112 @@
+﻿@page "/details";
+@using Syncfusion.Blazor.Grids;
+@using Syncfusion.Blazor.Buttons;
+@using BlazorWebApp.Shared.Models;
+
+<div style="padding-bottom:5px">
+    <SfButton Content="@ToggleButtonContent" OnClick="ToggleButtonClick"></SfButton>
+</div>
+<SfGrid @ref="EmployeeGrid" DataSource="@Employees" GridLines="GridLine.Both" ClipMode="ClipMode.Ellipsis">
+    <GridEvents TValue="Employee" DataBound="@DataBoundHandler"></GridEvents>
+    <GridTemplates>
+        <DetailTemplate>
+            @{
+            var employee = (context as Employee);
+            <td style="text-align: center">
+                <table width="100%" cellpadding="5">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img class="thumbnail" src="@employee.PhotoPath"
+                                     alt="Employee photo" />
+                            </td>
+                            <td>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>First Name </td>
+                                            <td>@employee.FirstName </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Last Name</td>
+                                            <td>@employee.LastName </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Gender
+                                            </td>
+                                            <td>
+                                                @employee.Gender
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Birth Date
+                                            </td>
+                                            <td>
+                                                @employee.DateOfBrith.ToShortDateString()
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            }
+        </DetailTemplate>
+    </GridTemplates>
+    <GridColumns>
+        <GridColumn Field=@nameof(Employee.EmployeeId) IsPrimaryKey="true" HeaderText="ID" Width="60"></GridColumn>
+        <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name" Width="100"></GridColumn>
+        <GridColumn Field=@nameof(Employee.LastName) HeaderText="Last Name" Width="100"></GridColumn>
+        <GridColumn Field=@nameof(Employee.DateOfBrith) HeaderText="Date of Birth" Width="110"></GridColumn>
+    </GridColumns>
+</SfGrid>
+
+<style type="text/css" class="cssStyles">
+    .thumbnail {
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+    }
+</style>
+
+@code{
+
+    public SfGrid<Employee>
+    EmployeeGrid { get; set; }
+
+    public string ToggleButtonContent { get; set; } = "Collapse all detail rows";
+
+    public List<Employee>
+        Employees { get; set; }
+
+        [Inject]
+        public IEmployeeService EmployeeService { get; set; }
+
+        protected override async Task OnInitializedAsync()
+        {
+        Employees = (await EmployeeService.GetAllEmployees()).ToList();
+        }
+
+        public async void ToggleButtonClick()
+        {
+        if (ToggleButtonContent.StartsWith("Expand"))
+        {
+        await EmployeeGrid.ExpandAllDetailRowAsync();
+        ToggleButtonContent = "Collapse all detail rows";
+        }
+        else
+        {
+        await EmployeeGrid.CollapseAllDetailRowAsync();
+        ToggleButtonContent = "Expand all detail rows";
+        }
+        }
+
+        public async void DataBoundHandler()
+        {
+        await EmployeeGrid.ExpandAllDetailRowAsync();
+        }
+        }
